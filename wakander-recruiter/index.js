@@ -1,3 +1,7 @@
+$(function () {
+    $('[data-toggle="collapse"]').collapse();
+});
+
 window.onload = routing;
 window.onhashchange = routing;
 
@@ -7,10 +11,10 @@ function navigation(tab) {
 
 function routing() {
     let tab = window.location.hash.slice(1);
-    if(tab) {
+    if((tab == "vagas") || (tab == "perfis") || (tab == "planos") || (tab == "mensagens")) {
         let menuItem = `#${tab}-nav`;
 
-        let allButtons = document.querySelectorAll("#secondary-navigation-menu > button");
+        let allButtons = document.querySelectorAll("#secondary-navigation-menu > label");
         allButtons.forEach(button => {
             button.classList.remove('secondary-nav-item-container-active');
             button.classList.add('secondary-nav-item-container');
@@ -37,4 +41,10 @@ function toggleSubmitButton() {
         button.classList.remove('success-button');
         button.classList.add('disabled-button');
     }
+}
+
+function changeDropdownImg() {
+    let currentImg = document.getElementById('dropdownImg').src;
+    if(currentImg.includes('arrow-down')) { document.getElementById('dropdownImg').src = currentImg.replace('arrow-down', 'arrow-up'); }
+    else { document.getElementById('dropdownImg').src = currentImg.replace('arrow-up', 'arrow-down'); }
 }

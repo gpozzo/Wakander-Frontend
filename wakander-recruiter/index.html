@@ -1,0 +1,232 @@
+<html>
+    <head>
+        <title>Wakander | Empresa</title>
+        <meta charset='UTF-8'>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" />
+        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+        <link type="text/css" rel="stylesheet" href="style.css"/>
+      </head>
+
+    <body>
+        <nav class="navbar flex-space-around" style="max-height:100px">
+            <div style="width:25%">
+                <center><img style="width:50%; margin-left:-30px" src="img/wakander.png"></img></center>
+            </div>
+            <input class="form-control mr-sm-2 rounded-pill search-bar" type="search" style="width:50%" placeholder="Busque por cursos, vagas e pessoas" aria-label="Search">
+            <div style="width:25%"> <center><div class="btn btn-lg my-profile" style="width:50%"> <img src="img/circle-cropped.png" style="width:30%; margin-right:10px"> <b>Meu Perfil</b></button></center></div>
+        </nav>
+        <hr class="nav-divider"></hr>
+        <nav class="navbar flex-center" style="height:48px">
+            <label class="btn nav-items-active" style="border-radius:0">CCR no Wakander</label></div>
+            <label class="btn nav-items">Acompanhamento de Wakanders</label>
+            <label class="btn nav-items">Conheça o Wakander</label>
+        </nav>
+
+        <div class="card-container">
+            <div class="card mb-3" style="border:0px">
+                <div class="row">
+                    <div class="col-md-3" style="padding:0">
+                        <div class="main-avatar"><img src="img/circle-cropped.png"></img></div>
+                    </div>
+                    <div class="col" style="padding:0">
+                        <div class="card-body">
+                            <h5 class="card-title">Olá, Tatiana!</h5>
+                            <small class="card-text" style="font-weight:600">A média de pontos dos jovens recrutados pela <b>CCR</b> é de <b>750</b></small>
+
+                            <img src="img/rating-bar.png" style="margin-bottom:15px; margin-top:15px"></img><br>
+        
+                            <a href="#" style='text-decoration:none'><small style="color: #FF4B23; font-weight:600">Entenda a pontuação</small></a>
+                        </div>
+                    </div>
+
+                    <div class="flex-center" id="secondary-navigation-menu" style="border-top: 2px solid #E5E5E5">
+                        <label class="btn secondary-nav-item-container-active" name="navigaton-item" onClick="navigation('vagas')" id="vagas-nav"> <p class="secondary-nav-items">Vagas publicadas</p> </label>
+                        <label class="btn secondary-nav-item-container" name="navigaton-item" onClick="navigation('perfis')" id="perfis-nav"> <p class="secondary-nav-items">Perfis</p> </label>
+                        <label class="btn secondary-nav-item-container" name="navigaton-item" onClick="navigation('mensagens')" id="mensagens-nav"> <p class="secondary-nav-items">Mensagens</p> </label>
+                        <label class="btn secondary-nav-item-container" name="navigaton-item" onClick="navigation('planos')" id="planos-nav"> <p class="secondary-nav-items">Planos Wakander</p> </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="vagas" class="navigation-tab" style="display:block">
+
+            <center><div class="card-container">
+                <label class="btn btn-primary rounded-pill filter-tag-active">TODAS</label>
+                <label class="btn btn-primary rounded-pill filter-tag">EM ABERTO</label>
+                <label class="btn btn-primary rounded-pill filter-tag">PREENCHIDAS</label>
+            </div></center>
+
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-body">
+                        <p style="color:#C1B8B6; margin-bottom:0; font-weight:600">Publicada em 15/01/21</p>
+                        <p style="color:black; font-weight:500">São Paulo, SP</p>
+                        <h3 class="card-title">Assistente Administrativo</h3>
+                        <p class="card-text" style="margin-bottom:0">CCR</p>
+                        <small>Carga Horária: 6h</small><br><br>
+                        <div>
+                            <label href="#" class="btn btn-primary rounded-pill see-more-button">VER CANDIDATURAS</label>
+                            <label href="#" class="btn btn-primary rounded-pill filter-tag-active">EDITAR DETALHES</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-body">
+                        <p style="color:#C1B8B6; margin-bottom:0;font-weight:600">Publica em 12/12/20</p>
+                        <p style="color:black; font-weight:500">Cotia, SP</p>
+                        <h3 class="card-title">Jovem Aprendiz</h3>
+                        <p class="card-text" style="margin-bottom:0">CCR</p>
+                        <small>Carga Horária: 5h</small><br><br>
+                        <a href="#" class="btn btn-primary rounded-pill success-button">VAGA PREENCHIDA</a>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+
+        <div id="perfis" class="navigation-tab" style="display:none">
+
+            <div class="card-container">
+                <div class="flex-center">             
+                    <div class="card" style="border:0px; width:18rem">
+                        <center>
+                            <div class="card-body">
+                                <img src="img/rafaela.png" style="width:30%"></img>
+                                <h5 class="card-title" style="margin-top:5px; font-weight:800">Rafaela Santos</h5>
+                                <p class="card-text">Olinda, PE <br> 18 anos</p>
+                                <hr style="border:1px solid #E9DAD6">
+                                </hr>
+                        </center>
+                        <small class="card-text" style="text-align:left; margin-left:10px; font-weight:600">Pontuação: <b>600</b></small>
+                        <img src="img/rating-bar.png" style="margin:10px"></img><br>
+                        <center><label href="#"
+                                style="font-size:0.8em; font-weight:600; color: #4B3A37; padding:4px; margin-bottom:10px"><b>95%</b> de
+                                match com as suas vagas 🔥</label><br>
+                            <label href="#" class="btn btn-primary rounded-pill see-more-button">VER PERFIL</label><br><br>
+                        </center>
+                    </div>
+
+                    <div class="card" style="border:0px; width:18rem; margin-left:20px">
+                        <center>
+                            <div class="card-body">
+                                <img src="img/thamiris.png" style="width:30%"></img>
+                                <h5 class="card-title" style="margin-top:5px; font-weight:800">Thamiris Ferreira</h5>
+                                <p class="card-text">Porto Alegre, RS <br> 22 anos</p>
+                                <hr style="border:1px solid #E9DAD6">
+                                </hr>
+                        </center>
+                        <small class="card-text" style="text-align:left; margin-left:10px; font-weight:600">Pontuação: <b>750</b></small>
+                        <img src="img/rating-bar.png" style="margin:10px"></img><br>
+                        <center><label href="#"
+                                style="font-size:0.8em; font-weight:600; color: #4B3A37; padding:4px; margin-bottom:10px"><b>73%</b> de
+                                match com as suas vagas 🔥</label><br>
+                            <label href="#" class="btn btn-primary rounded-pill see-more-button">VER PERFIL</label><br><br>
+                        </center>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="mensagens" class="navigation-tab" style="display:none">
+            
+        </div>
+
+        <div id="planos" class="navigation-tab" style="display:none">
+            <div class="card-container">
+                <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                    <div class="col">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header" style="background:#C1B8B6">
+                                <p class="my-0 fw-normal" style="color:white"><b>PLANO ATUAL</b></p>
+                            </div>
+                            <div class="card-body">
+                                <label href="#" class="btn btn-primary btn-sm rounded-pill tag-basico">BÁSICO</label><br>
+                                <small style="display: inline; font-weight:600">R$</small>
+                                <h2 class="card-title pricing-card-title" style="display: inline">299</h2>
+                                <small style="display: inline; font-weight:600">/ MÊS</small><br><br>
+                                <hr style="border: 1px solid #E9DAD6"></hr><br>
+                                <ul class="list-unstyled"><br><br><br><br>
+                                    <li class="pricing-items">Divulgação de <b>1</b> vaga/mês</li><br>
+                                    <li class="pricing-items"><b>5</b> mensagens diretas a candidatos</li><br>
+                                    <li class="pricing-items">Notificação quando candidatos completam trilhas</li><br>
+                                </ul><br><br><br><br><br>
+                                <label href="#" class="btn btn-primary rounded-pill cancel-button">CANCELAR</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header" style="background:#00BA4A">
+                                <p class="my-0 fw-normal" style="color:white"><b>CUSTO-BENEFÍCIO</b></p>
+                            </div>
+                            <div class="card-body">
+                                <label href="#" class="btn btn-primary btn-sm rounded-pill tag-elite">ELITE</label><br>
+                                <small style="display: inline; font-weight:600">R$</small>
+                                <h2 class="card-title pricing-card-title" style="display: inline">349</h2>
+                                <small style="display: inline; font-weight:600">/ MÊS</small><br><br>
+                                <hr style="border: 1px solid #E9DAD6"></hr><br>
+                                <ul class="list-unstyled"><br><br>
+                                    <li class="pricing-items">Divulgação de <b>5</b> vagas/mês</li><br>
+                                    <li class="pricing-items"><b>20</b> mensagens diretas a candidatos</li><br>
+                                    <li class="pricing-items">Notificação quando candidatos completam trilhas</li><br>
+                                    <li class="pricing-items">Recomendação customizada de Perfis de Candidatos</li><br>
+                                    <li class="pricing-items">Acompanhamento de Candidatos Talentos</li><br>
+                                </ul><br>
+                                <label href="#" class="btn btn-primary rounded-pill see-more-button" style="margin-top: 2.66px">UPGRADE</label><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-header" style="background:#C1B8B6">
+                                <p class="my-0 fw-normal" style="color:white"><b>MAIS FEATURES</b></p>
+                            </div>
+                            <div class="card-body">
+                                <label href="#" class="btn btn-primary btn-sm rounded-pill tag-premium">PREMIUM</label><br>
+                                <small style="display: inline; font-weight:600">R$</small>
+                                <h2 class="card-title pricing-card-title" style="display: inline">449</h2>
+                                <small style="display: inline; font-weight:600">/ MÊS</small><br><br>
+                                <hr style="border: 1px solid #E9DAD6"></hr><br>
+                                <ul class="list-unstyled">
+                                    <li class="pricing-items">Divulgação de vagas <b>ilimitadas</b></li><br>
+                                    <li class="pricing-items"><b>30</b> mensagens diretas a candidatos</li><br>
+                                    <li class="pricing-items">Notificação quando candidatos completam trilhas</li><br>
+                                    <li class="pricing-items">Recomendação customizada de Perfis de Candidatos</li><br>
+                                    <li class="pricing-items">Acompanhamento de Candidatos Talentos</li><br>
+                                    <li class="pricing-items">Destaque no feed para publicações de vagas</li><br>
+                                </ul>
+                                <label href="#" class="btn btn-primary rounded-pill see-more-button" style="margin-top:13.33px">UPGRADE</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <center><p style="font-weight:800">Para conhecer as opções de publicidade<br>dentro da plataforma, ou pacotes personalizados:</p>
+                <label href="#" class="btn btn-primary rounded-pill see-more-button">CLIQUE AQUI E FALE CONOSCO</label></center>
+
+            </div>
+
+        </div>
+
+        <div class="fixed-bottom" style="margin-bottom:30px; margin-left:30px; width:15%">
+            <img src="img/floater-app.png" ></img>
+        </div>
+
+    </body>
+</html>

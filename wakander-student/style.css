@@ -40,6 +40,15 @@ img {
     background: #00BA4A;
     border: 1px solid #00BA4A;
     font-weight: 700;
+    outline: none;
+    box-shadow: none;
+}
+
+.info-button,  .info-button:hover, .info-button:visited, .info-button:focus, .info-button:active {
+    background: #FBEAE6;
+    border: 1px solid #FBEAE6;
+    font-weight: 700;
+    color: #530F00;
 }
 
 .disabled-button,  .disabled-button:hover, .disabled-button:visited, .disabled-button:focus, .disabled-button:active {
@@ -83,12 +92,23 @@ img {
 .tag-curriculo, .tag-curriculo:hover, .tag-curriculo:focus, .tag-curriculo:active { background: #5C1395; border: 1px solid #5C1395; }
 .tag-pontos, .tag-pontos:hover, .tag-pontos:focus, .tag-pontos:active { color: #00BA4A; background: white; border: 2px solid  #00BA4A; }
 
-.novo-curso, .novo-curso:hover, .novo-curso:active, .novo-curso:focus {
+
+.novo-curso, .novo-curso:hover, .novo-curso:focus {
     margin-top:8px;
     margin-bottom:8px;
     background: #FF4B23;
     border: 1px solid #FF4B23;
     font-weight: 700;
+    color: white;
+    height:44px;
+    padding: 5px;
+}
+
+
+.course-name {
+    color:black !important;
+    background:white !important;
+    font-weight:600 !important;
 }
 
 .flex-space-around {
@@ -178,4 +198,134 @@ img {
     margin: 0 auto;
     text-align: center;
     margin-left:30px;
+}
+
+
+  .rule {
+    margin: 10px 0;
+    border: none;
+    height: 1.5px;
+    background-image: linear-gradient(left, #f0f0f0, #c9bbae, #f0f0f0);
+  }
+  
+  /* ===== Select Box ===== */
+  .sel {
+    font-size: 1rem;
+    display: inline-block;
+    margin: 3em 2em;
+    width: 45%;
+    background-color: #FF4B23;
+    border-radius:30px;
+    position: relative;
+    cursor: pointer;
+    padding-top: 10px;
+  }
+
+  
+  .sel.active::before {
+    transform: rotateX(-180deg);
+  }
+  
+  .sel__placeholder {
+    display: block;
+    font-size: 1em;
+    font-weight:800;
+    color:white;
+    padding: 0.2em 0.5em;
+    text-align: left;
+    pointer-events: none;
+    user-select: none;
+    visibility: visible;
+    text-align:center;
+  }
+  
+  .sel.active .sel__placeholder {
+    visibility: hidden;
+  }
+  
+  .sel__placeholder::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.2em 0.5em;
+    content: attr(data-placeholder);
+    visibility: hidden;
+  }
+  
+  .sel.active .sel__placeholder::before {
+    visibility: visible;
+  }
+  
+  .sel__box {
+    top: calc(100% + 4px);
+    left: -4px;
+    display: none;
+    list-style-type: none;
+    text-align: left;
+    font-size: 1em;
+    background-color: #FFF;
+    width: calc(100% + 8px);
+    box-sizing: border-box;
+  }
+  
+  .sel.active .sel__box {
+    display: block;
+    animation: fadeInUp 500ms;
+  }
+  
+  .sel__box__options {
+    display: list-item;
+    font-size: 1.5em;
+    color: black;
+    padding: 0.5em 1em;
+    user-select: none;
+    font-weight:600;
+  }
+  
+  .sel__box__options.selected::after {
+    display: inline;
+  }
+  
+  .sel__box__options:hover {
+    background-color: #E9DAD6;
+  }
+  
+  /* ----- Select Box Black Panther ----- */
+  .sel {
+    border-bottom: 4px solid  #FF4B23;
+  }
+  
+  .sel--black-panther {
+    z-index: 3;
+  }
+  
+  /* ----- Select Box Superman ----- */
+  .sel--superman {
+  /*   display: none; */
+    z-index: 2;
+  }
+  
+  /* ===== Keyframes ===== */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 20px, 0);
+    }
+  
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+    }
 }
