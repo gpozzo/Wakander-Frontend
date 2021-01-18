@@ -6,5 +6,7 @@ Este repositório contém somente a camada de front-end da aplicação (HTML, CS
 
 Maiores detalhes acerca dos dados e rotas da aplicação estão disponíveis no repositório de back-end da aplicação neste [link](https://github.com/NormanFrieman/wakander_backend).
 
+Para referência, o wireframe da aplicação está disponível no [Figma](https://www.figma.com/file/1JMkxFVrSn9zw65RKpnRoh/Wakander). 
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
