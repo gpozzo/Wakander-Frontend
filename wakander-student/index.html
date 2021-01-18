@@ -43,7 +43,7 @@
                     <div class="col" style="padding:0">
                         <div class="card-body">
                             <h5 class="card-title">O que faremos hoje, Thamiris?</h5>
-                            <p class="card-text">Sua pontuação é de <b>750</b></p>
+                            <p class="card-text">Sua pontuação é de <span id="userRating" style="font-weight:700"></span></p>
         
                             <!-- <div class="progress">
                                 <div class="progress-bar bg-danger" role="progressbar" style="width: 40%" aria-valuenow="40"
@@ -108,7 +108,7 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">Você conquistou o acesso ao novo módulo!</h5>
-                        <p class="card-text">Parabéns! O módulo <b>Redação Corporativa</b> da trilha de Empreendedorismo já está disponível para você.</p>
+                        <p class="card-text">Parabéns! O módulo <b>Redação Corporativa</b> da trilha de <b>Empreendedorismo</b> já está disponível para você.</p>
                         <label href="#" class="btn btn-primary rounded-pill see-more-button">ACESSAR</label>
                     </div>
                     <div class="card-footer">
@@ -120,20 +120,21 @@
             <div class="card-container">
                 <div class="card">
                     <div class="card-header" style="background:white; border: 0px; margin-top: 5px">
+                        <label class="btn btn-primary btn-sm rounded-pill tag tag-empreendedorismo">EMPREENDEDORISMO</label>
                         <label class="btn btn-primary btn-sm rounded-pill tag tag-concluido">CONCLUÍDO</label>
                         <label class="btn btn-primary btn-sm rounded-pill tag tag-pontos">+25 PONTOS</label>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Você tem uma nova conquista!</h5>
-                        <p class="card-text">Você conquistou a medalha <b>Primeiro da turma</b> por concluir seu primeiro curso aqui na Wakander.</p>
-                        <label href="#" class="btn btn-primary rounded-pill see-more-button">VER CONQUISTAS</label>
+                        <h5 class="card-title">Módulo concluído!</h5>
+                        <p class="card-text">Uau! Você concluiu o módulo de <b>Gerenciamento de Tempo</b> da trilha de <b>Empreendedorismo</b> da Wakander!</p>
+                        <label href="#" class="btn btn-primary rounded-pill filter-tag"><img src="img/share.png" style="width:8%"></img> COMPARTILHAR</label>
                     </div>
                     <div class="card-footer">
                         <p class="card-text"><small class="text-muted">Ontem</small></p>
                     </div>
                 </div>
             </div>
-            
+
             <div class="card-container">
                 <div class="card">
                     <div class="card-header" style="background:white; border: 0px; margin-top: 5px">
@@ -145,6 +146,23 @@
                         <p class="card-text">De acordo com seu progresso e seus interesses na Wakander, selecionamos a trilha
                             <b>Preparação de Currículo</b> para seus próximos passos.</p>
                         <label href="#" class="btn btn-primary rounded-pill see-more-button">INICIAR TRILHA</label>
+                    </div>
+                    <div class="card-footer">
+                        <p class="card-text"><small class="text-muted">Há 2 dias</small></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-header" style="background:white; border: 0px; margin-top: 5px">
+                        <label class="btn btn-primary btn-sm rounded-pill tag tag-concluido">CONCLUÍDO</label>
+                        <label class="btn btn-primary btn-sm rounded-pill tag tag-pontos">+15 PONTOS</label>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Você tem uma nova conquista!</h5>
+                        <p class="card-text">Você conquistou a medalha <b>Primeiro da turma</b> por concluir seu primeiro curso aqui na Wakander.</p>
+                        <label href="#" class="btn btn-primary rounded-pill see-more-button">VER CONQUISTAS</label>
                     </div>
                     <div class="card-footer">
                         <p class="card-text"><small class="text-muted">Há 4 dias</small></p>
@@ -355,7 +373,7 @@
                                     </div>
                                 </div>
                             </div><hr style="border: 1px solid #E9DAD6"></hr>
-                        
+
                             <div style="margin-left:15px"><br>
                                 <div class="row">
                                     <div class="col-sm-4">
@@ -393,6 +411,17 @@
         <div class="fixed-bottom" style="margin-bottom:30px; margin-left:30px; width:15%">
             <img src="img/floater-app.png" ></img>
         </div>
+
+        <div id="myModal" class="modal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body"><center>
+                  <p style="font-weight:700">Parabéns! Você conquistou 10 pontos<br>pela leitura concluída! :)</p>
+                  <button type="button" class="btn btn-secondary see-more-button" data-bs-dismiss="modal" onClick="getPoints()">Voltar ao perfil</button></center>
+                </div>
+              </div>
+            </div>
+          </div>
 
     </body>
 </html>

@@ -1,5 +1,7 @@
 $(function () {
     $('[data-toggle="collapse"]').collapse();
+    getBooks();
+    getPoints();
 });
 
 window.onload = routing;
@@ -26,8 +28,6 @@ function routing() {
         let tabs = document.querySelectorAll(".navigation-tab");
         tabs.forEach(tab => tab.style.display = 'none');
         document.getElementById(tab).style.display = 'block';
-
-        if(tab == 'leituras') getBooks();
     }
 }
 
@@ -45,12 +45,6 @@ function toggleSubmitButton() {
     }
 }
 
-/*function changeDropdownImg() {
-    let currentImg = document.getElementById('dropdownImg').src;
-    if(currentImg.includes('arrow-down')) { document.getElementById('dropdownImg').src = currentImg.replace('arrow-down', 'arrow-up'); }
-    else { document.getElementById('dropdownImg').src = currentImg.replace('arrow-up', 'arrow-down'); }
-}*/
-
 function getBooks() {
     var labels = ['SUGESTÕES', 'EM ANDAMENTO', 'CONCLUÍDO'];
 
@@ -64,9 +58,14 @@ function getBooks() {
             data.results.forEach(book => {
                 if(i == 3) { i = 0; }
                 let label = labels[i];
-                let labelClass = 'tag-em-andamento';
-                if(label == 'CONCLUÍDO') labelClass = 'tag-concluido';
-                if(label == 'SUGESTÕES') labelClass = 'tag-sugestoes';
+                let additionalButton = '';
+                let labelClass = 'tag-livro-em-andamento';
+                if(label == 'CONCLUÍDO') labelClass = 'tag-pontos';
+                if(label == 'SUGESTÕES') labelClass = 'tag-livro-sugestoes';
+
+                if(label == 'EM ANDAMENTO') {
+                    additionalButton = `<a href="#" onClick="markBookAsRead()" class="btn btn-primary btn-sm rounded-pill success-button">MARCAR COMO CONCLUÍDA</a><br>`; 
+                }
 
                 let html = `<div class="card-container">
                             <div class="card mb-3" style="border:0px">
@@ -79,7 +78,8 @@ function getBooks() {
                                             <label class="btn btn-primary btn-sm rounded-pill tag ${labelClass}">${labels[i]}</label>
                                             <h5 class="card-title" style="margin-top:10px;"><b>${book.name}</b></h5>
                                             <p class="card-text muted-text" style="margin-bottom:0">Autor(a): ${book.author}</p>
-                                            <p class="card-text muted-text">Ano: ${book.year}</p><br>
+                                            <p class="card-text muted-text">Ano: ${book.year}</p>
+                                            ${additionalButton}
                                         </div>
                                     </div>
                                 </div>
@@ -95,7 +95,54 @@ function getBooks() {
     });
 }
 
-/*function getTrails() {
+function markBookAsRead() {
+    var myModal = new bootstrap.Modal(document.getElementById('myModal'));
+    myModal.toggle();
+    addPoints(10);
+}
+
+function getPoints () {
+    $.ajax({
+        type: 'GET',
+        url: `https://wakanderbackend.herokuapp.com/bylist/users/0/thamirisoliveira@gmail.com`,
+        contentType: 'json',
+        success: function (data) {
+            document.getElementById('userRating').innerText = data.rating;
+        },
+        error: function(err) {
+            console.log(err);
+        }
+    });
+}
+
+function addPoints (points) {
+
+    let obj = {
+        "email": "thamirisoliveira@gmail.com",
+        "password": "12345678",
+        "addRating": points
+    };
+
+    let json = JSON.stringify(obj);
+
+    console.log(json);
+
+    $.ajax({
+        type: 'PUT',
+        url: `https://wakanderbackend.herokuapp.com/addRating`,
+        data: json,
+        dataType: "json",
+        contentType: "application/json",
+        success: function (data) {
+            console.log(data);
+        },
+        error: function(err) {
+            console.log(err);
+        }
+    });
+}
+
+function getTrails() {
     $.ajax({
         type: 'GET',
         url: `https://wakanderbackend.herokuapp.com/list/trails`,
@@ -115,7 +162,7 @@ function getBooks() {
             console.log(err);
         }
     });
-}*/
+}
 
 /* Logic for the dropdown menu in the home page */
 $(function () {
@@ -163,50 +210,3 @@ $(function () {
         $currentSel.children('select').prop('selectedIndex', index + 1);
     });
 });
-
-function cu() {
-    /* Logic for the dropdown menu in the home page */
-    $('.sel').each(function() {
-        $(this).children('select').css('display', 'none');
-        
-        var $current = $(this);
-        
-        $(this).find('option').each(function(i) {
-        if (i == 0) {
-            $current.prepend($('<div>', {
-            class: $current.attr('class').replace(/sel/g, 'sel__box')
-            }));
-
-            var placeholder = $(this).text();
-            $current.prepend($('<span>', {
-            class: $current.attr('class').replace(/sel/g, 'sel__placeholder'),
-            text: placeholder,
-            'data-placeholder': placeholder
-            }));
-            
-            return;
-        }
-        
-        $current.children('div').append($('<span>', {
-            class: $current.attr('class').replace(/sel/g, 'sel__box__options'),
-            text: $(this).text()
-        }));
-        });
-    });
-  
-    $('.sel').click(function() {
-        $(this).toggleClass('active');
-    });
-
-    $('.sel__box__options').click(function() {
-        var txt = $(this).text();
-        var index = $(this).index();
-        
-        $(this).siblings('.sel__box__options').removeClass('selected');
-        $(this).addClass('selected');
-
-        var $currentSel = $(this).closest('.sel');
-        $currentSel.children('.sel__placeholder').text(txt);
-        $currentSel.children('select').prop('selectedIndex', index + 1);
-    });
-}

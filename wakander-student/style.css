@@ -91,7 +91,8 @@ img {
 .tag-concluido, .tag-concluido:hover, .tag-concluido:focus, .tag-concluido:active { background: #00BA4A; border: 1px solid #00BA4A; }
 .tag-curriculo, .tag-curriculo:hover, .tag-curriculo:focus, .tag-curriculo:active { background: #5C1395; border: 1px solid #5C1395; }
 .tag-pontos, .tag-pontos:hover, .tag-pontos:focus, .tag-pontos:active { color: #00BA4A; background: white; border: 2px solid  #00BA4A; }
-
+.tag-livro-em-andamento, .tag-livro-em-andamento:hover, .tag-livro-em-andamento:focus  { color: #E3B615; background: white; border: 2px solid  #E3B615; }
+.tag-livro-sugestoes, .tag-livro-sugestoes:hover, .tag-livro-sugestoes:focus { color: #005CB1; background: white; border: 2px solid  #005CB1; }
 
 .novo-curso, .novo-curso:hover, .novo-curso:focus {
     margin-top:8px;
