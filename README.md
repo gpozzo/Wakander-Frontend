@@ -2,7 +2,7 @@
 
 This is the prototype of a web platform developed during the CCR Hackathon which aims to support the entry of young black talents in the Brazilian marketplace.
 
-Demo: [link]https://wakandertest.herokuapp.com/
+Demo: https://wakandertest.herokuapp.com/
 
 *
 
